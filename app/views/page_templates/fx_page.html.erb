@@ -1,0 +1,11 @@
+<% @base_ccy = params.fetch("base").upcase %>
+<% @price_ccy = params.fetch("price").upcase %>
+
+<h1><%= "Convert " + @base_ccy + " to " + @price_ccy %></h1>
+
+<p><%= "1 " + @base_ccy + " equals " + @fx_price_per_base.to_s + " " + @price_ccy %></p>
+
+<% api_link_text = "https://api.exchangerate.host/convert?from=" + @base_ccy + "&to=" + @price_ccy %>
+
+<% link_text = "/forex/" + @base_ccy %>
+<p>Go <a href=<%=link_text%> >back</a>.</p>

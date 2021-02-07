@@ -1,0 +1,14 @@
+<% base_ccy = params.fetch("base").upcase %>
+
+<h1><%= "Convert " + base_ccy %></h1>
+
+<p>Go <a href="/forex">back</a>.</p>
+
+<ul>
+  <% @price_currencies.each do |price_ccy| %>
+    <% link_text = "/forex/" + base_ccy + "/" + price_ccy %>
+    <li>
+      <a href=<%=link_text%> ><%= "Convert 1 " + base_ccy + " to " + price_ccy + "..."%></a>
+    </li>
+  <% end %>
+</ul>
